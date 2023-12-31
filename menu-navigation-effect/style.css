@@ -273,14 +273,19 @@ body {
   gap: 8px;
 }
 
-.action-button-wrapper button{
+.action-button-wrapper button {
   border: none;
   outline: none;
   padding: 5px 12px;
   font-size: 0.75em;
   border-radius: 3px;
   letter-spacing: 0.05em;
-  background-color: var(--btn-clr, transparent); /* //#ffa117, #f44336, #0fc70f */
+  background-color: #ffa117; /* //#ffa117, #f44336, #0fc70f */
   color: #fafafa;
-  box-shadow: 1px 0px 2px 1px var(--btn-clr, #0fc70f);
+  box-shadow: 1px 0px 2px 1px #ffa117af;
+}
+.action-button-wrapper button.active {
+  background-color: transparent; /* //#ffa117, #f44336, #0fc70f */
+  color: #ffa117;
+  box-shadow: 1px 0px 2px 1px #ffa117;
 }
