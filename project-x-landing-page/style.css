@@ -1,0 +1,214 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+@font-face {
+  font-family: s;
+  src: url(./font/Storm\ -\ Trivia\ Grotesk\ R1.otf);
+}
+
+
+body{
+  background: repeating-conic-gradient(#0000 .0004% , #000d .0005%),
+  linear-gradient(0deg , rgb(38,19,39) , rgb(26,26,58), black);
+  background-blend-mode: overlay screen screen;
+  height: 100vh;
+  color: #fff;
+  font-family:s ;
+}
+
+
+.nav-bar{
+  display: flex;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.menu{
+  display: flex;
+  gap: 4rem;
+  flex: 2;
+}
+
+li{
+  list-style: none;
+  text-transform: capitalize;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo{
+  flex: 1;
+  display: flex;
+  gap: .5rem;
+}
+
+.fa-star-of-life{
+  background: linear-gradient(-45deg,#06aab4 , #e82a5d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sides{
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+
+.left-side{
+  width: 50%;
+  padding: 0 5rem;
+}
+.left-side h1{
+  text-transform: capitalize;
+  font-size: 50px;
+}
+
+
+.left-side span{
+  background: linear-gradient(45deg,#00c4cc , #7d2ae8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.right-side{
+  width: 50%;
+  margin-left: 150px;
+
+}
+
+
+.text-content{
+  max-width: 300px;
+  margin: auto;
+}
+
+.btn{
+  border: none;
+  background: none;
+  outline: none;
+  padding: .5rem 2rem;
+  color: #fff;
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg , rgb(147,58,154) ,
+  rgb(141,227,242) ,rgb(156,33,56));
+  border-image-slice: 1;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+
+.btn:hover{
+  transform: scale(1.1);
+}
+
+.fa-arrow-right{
+  margin-left: 10px;
+}
+
+.bottom-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+
+.bottom-box .ring{
+  border: 1px solid #fff;
+  height: 280px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border-radius: 200px;
+}
+
+
+.bottom-box :first-child{
+  width: 80%;
+}
+
+.bottom-box :nth-child(2){
+  width: 70%;
+}
+
+.bottom-box :nth-child(3){
+  width: 60%;
+  background: linear-gradient( to right , #fd1d1d , #833ab4 , #4cd977 ,
+  rgb(51,66,54)
+  );
+}
+
+.bottom-box :nth-child(3)::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+  background-position: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 200px;
+}
+.bottom-box :nth-child(4){
+  width: 55%;
+  background:  linear-gradient(red , transparent) , 
+  linear-gradient(to top left , blue , transparent),
+  linear-gradient(to top right , rgb(124, 211,134) ,transparent);
+  background-blend-mode: screen;
+
+}
+
+
+.bottom-box :nth-child(4)::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+  background-position: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 200px;
+}
+
+.img{
+  position: absolute;
+  bottom: 0;
+  left: 23%;
+  max-width: 690px;
+  width: 100%;
+  object-fit: cover;
+
+}
+
+
+.svg{
+  text-transform:capitalize;
+  transform: scale(.7);
+}
+
+.svg-text{
+  position: relative;
+}
+.svg-one{
+  position: absolute;
+  top: -50px;
+  right: 34%;
+}
+
+
+.svg-two{
+  position: absolute;
+  top: 10px;
+  left: 60%;
+}
