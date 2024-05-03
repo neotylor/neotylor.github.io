@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #0f0f0f;
+    padding: 0;
+    margin: 0;
+}
+
+.pxl {
+    width: 100%;
+    height: 100vh;
+    background: conic-gradient(from 180deg at 50% 70%, #fff 0deg, #ffc800 80deg, #cc0000 160deg, #80caff 240deg, #00c900 320deg, #fff 360deg);
+    -webkit-mask: radial-gradient(circle at 50% 50%, #fff 2px, #0000 2px) 50% 50% / 20px 20px, url("https://assets.codepen.io/605876/noise-mask.png") 300px 50% / 300px 300px;
+    -webkit-mask-composite: source-in;
+    -webkit-animation: anime 20s infinite linear;
+}
+@-webkit-keyframes anime {
+    to {-webkit-mask-position: 50% 50% , 0 50%;
+    mask-position: 50% 50%, 0 50%;
+    }
+}
+h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    margin: 0;
+    font-size: 125px;
+    mix-blend-mode: soft-light;
+    text-shadow: 2px 2px white;
+}
