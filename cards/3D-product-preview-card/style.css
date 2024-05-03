@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+    margin: 0;padding: 0;
+    font-family: sans-serif;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(45deg, #008051, #00ffcc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper{
+    width: 410px;
+    height: 570px;
+    
+    perspective: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card{
+    width: 320px;
+    height: 450px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.3s;
+    color: white;
+}
+.card > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    transform-style: preserve-3d;
+}
+.frontface{
+    background: #303030;
+    transform: rotateY(0deg) translateZ(160px);
+    border-radius: 30px 0 0 10px;
+    overflow: hidden;
+    /* opacity: 0.2; */
+}
+.frontface::after{
+    content: "";
+    position: absolute;
+    bottom: -30%;
+
+    width: 400px;
+    height: 400px;
+    background: #008cff;
+    border-radius: 50%;
+}
+.backface{
+    background: #303030;
+    transform: rotateY(90deg) translateZ(160px);
+    border-radius: 0 30px 10px 0;
+    overflow: hidden;
+}
+.backface::before{
+    content: "";
+    position: absolute;
+    bottom: -30%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: #008cff;
+    border-radius: 50%;
+}
+
+.wrapper:hover .card{
+    transform: rotateY(-90deg);
+}
+
+.imgWrapper{
+    position: absolute;
+    z-index: 5;
+    animation: flote 3s ease-in-out infinite alternate;
+}
+.imgWrapper img{
+    width: 300px;
+    height: 300px;
+    transition: 0.3s;
+    position: relative;
+    top: 0;
+    left: 50px;
+}
+
+@keyframes flote {
+    0%{
+        transform: translateY(-10px) translateX(25px);
+    }
+    100%{
+        transform: translateY(20px) translateX(18px);
+    }
+}
+.frontface .shadow{
+    position: 
+    absolute;
+    z-index: 5;
+    bottom: 30px;
+    right: -40px;
+    width: 300px;
+    height: 50px;
+    background: radial-gradient(#00000083, #0000, #0000);
+    animation: shadow-f 3s ease-in-out infinite alternate;    
+}
+@keyframes shadow-f {
+    0%{
+        padding: 0 0;
+        opacity: 0.5;
+    }
+    100%{
+        padding: 0 100px;
+        opacity: 1;
+    }
+}
+
+
+.backface .shadow{
+    position: 
+    absolute;
+    z-index: 5;
+    bottom: 30px;
+    right: -40px;
+    width: 350px;
+    height: 50px;
+    background: radial-gradient(#00000083, #0000, #0000);
+    animation: shadow-f 3s ease-in-out infinite alternate;    
+}
+.wrapper:hover .imgWrapper img{
+    rotate: 30deg;
+    left: 40px;
+    top: 100px;
+}
+
+h1{
+    background: gray;
+    padding: 0 6px;
+    display: inline;
+    color: #303030;
+    position: relative;
+    top: 30px;
+    left: 10px;
+}
+
+h2{
+    margin-bottom: 10px;
+
+}
+.size{
+    display: flex;
+    margin-bottom: 50px;
+    
+}
+.size span{
+    border: 2px solid white
+    ;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
