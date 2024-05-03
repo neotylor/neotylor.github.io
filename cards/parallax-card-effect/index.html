@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card 3D Parallax Effect on Hover</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- card one -->
+        <div class="card">
+            <div class="img">
+                <img src="https://source.unsplash.com/300x300/?face" alt="">
+            </div>
+            <div class="desc">
+                <h2>Your Name</h2>
+                <p>Web Designer</p>
+                <a href="#">Follow Me</a>
+            </div>
+        </div>
+
+        <!-- card two -->
+        <div class="card">
+            <div class="img">
+                <img src="https://source.unsplash.com/300x300/?face,face" alt="">
+            </div>
+            <div class="desc">
+                <h2>Your Name</h2>
+                <p>Web Designer</p>
+                <a href="#">Follow Me</a>
+            </div>
+        </div>
+
+        <!-- card three -->
+        <div class="card">
+            <div class="img">
+                <img src="https://source.unsplash.com/300x300/?face,female" alt="">
+            </div>
+            <div class="desc">
+                <h2>Your Name</h2>
+                <p>Web Designer</p>
+                <a href="#">Follow Me</a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <script type="text/javascript" src="https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+        });
+    </script>
+</body>
+
+</html>

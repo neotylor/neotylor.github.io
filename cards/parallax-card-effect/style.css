@@ -1,0 +1,110 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+    border-radius: 0 15px 0 15px;
+    background: #ffffff1a;
+    backdrop-filter: blur(5px);
+    transition: height 0.5s;
+}
+.container .card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00, #f0f);
+    clip-path: circle(30% at right 70%);
+}
+.container .card::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3, #e91e63);
+    clip-path: circle(20% at 10% 10%);
+}
+
+.img{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: white;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.4s;
+    top: 20px;
+    z-index: 1;
+    box-shadow: 0 0 10px #0000004b;
+}
+.container .card:hover .img{
+    top: -50px;
+    scale: 0.9;
+}
+.img img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card .desc{
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    padding: 0 20px;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.container .card:hover .desc{
+    height: 130px;
+}
+.container .card .desc  h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+.container .card .desc p{
+    color: ghostwhite;
+}
+.container .card .desc a{
+    position: relative;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    padding: 10px;
+    top: 30px;
+    transition: 0.5s;
+}
+.container .card .desc a:hover{
+    opacity: 0.8;
+}
