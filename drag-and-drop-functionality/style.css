@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+    overflow: hidden;
+    
+    min-height: 100vh;
+}
+.heading {
+    position: absolute;
+    font-size: 5rem;
+    top: 50px;
+    left: 50%;
+    font-family: sans-serif;
+    transform: translateX(-50%);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px;
+    min-height: 50vh;
+    margin-top: 200px;
+}
+
+.left {
+    border: 1px solid #e4e4ff;
+    width: 345px;
+    min-height: 50vh;
+    padding: 10px;
+}
+
+.left .item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #e4e4ff;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 5px;
+    margin: 4px 2px;
+    padding: 10px;
+    /* color: gray; */
+}
+
+.left .item i {
+    font-size: 2rem;
+    margin-top: 15px;
+}
+
+
+
+.item:active {
+    cursor: grabbing;
+}
+
+.item::before {
+    content: ":::";
+    position: absolute;
+}
+
+.left .item::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+}
+
+
+
+.mid {
+    border: 1px solid #e4e4ff;
+    width: 250px;
+    padding: 10px;
+
+}
+
+.mid .item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    border: 1px solid #e4e4ff;
+    padding: 10px 35px;
+    /* color: gray; */
+    margin: 5px 0;
+}
+
+.mid .item::before {
+    left: 10px;
+    font-size: 1rem;
+    rotate: 90deg;
+}
+
+
+.right {
+    border: 1px solid #e4e4ff;
+    width: 50px;
+    padding: 5px;
+}
+
+.right .item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid #e4e4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: gray; */
+    margin-bottom: 5px;
+}
+
+
+.right .item span {
+    display: none;
+}
+
+.right .item::before {
+    content: "";
+    opacity: 0;
+}
+
+
+
+
+.right,
+.left,
+.mid {
+    border-top: 5px solid rgb(0, 140, 191);
+    border-radius: 5px 5px 0 0;
+    background: #ffffff;
+    box-shadow: 0 0 30px rgb(198, 198, 198);
+}
+.item {
+    cursor: pointer;
+    background: rgb(242, 242, 242);
+    color: rgb(92, 92, 92);
+} 
