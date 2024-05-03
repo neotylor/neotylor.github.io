@@ -1,0 +1,85 @@
+body{
+    display: flex;
+    background: #e0e0e0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+:root{
+    --normal:
+    inset 0px 0px 0px #bbb,
+    inset 0px 0px 0px #fff,
+    0px 0px 0px #bbb,
+    0px 0px 0px #fff;
+
+    --down:
+    inset 10px 10px 30px #bbb,
+    inset -10px -10px 30px #fff,
+    0px 0px 0px #bbb,
+    0px 0px 0px #fff;
+
+    --up:
+    inset 0px 0px 0px #bbb,
+    inset 0px 0px 0px #fff,
+    10px 10px 10px #bbb,
+    -10px -10px 30px #fff;
+}
+
+.cercle{
+    position: absolute;
+    aspect-ratio: 1/1;
+    
+    border-radius: 50%;
+    background: #e0e0e0;
+    box-shadow: var(--up);
+
+    animation: anime infinite 12s ease-in-out;
+}
+
+.cercle_one {
+    z-index: 5;
+    animation-delay: 0.8s;
+    width: 100px;
+}
+
+.cercle_two {
+    z-index: 4;
+    animation-delay: 0.6s;
+    width: 200px;
+}
+
+.cercle_three {
+    z-index: 3;
+    animation-delay: 0.4s;
+    width: 300px;
+}
+
+.cercle_four {
+    z-index: 2;
+    animation-delay: 0.2s;
+    width: 400px;
+}
+
+.cercle_five {
+    z-index: 1;
+    animation-delay: 0.0s;
+    width: 500px;
+}
+
+@keyframes anime {
+    0%{
+        box-shadow: var(--normal);
+    }
+   20%{
+        box-shadow: var(--up);
+    }
+    40%, 50%{
+        box-shadow: var(--normal);
+    }
+    70%{
+        box-shadow: var(--down);
+    }
+    95%, 100%{
+        box-shadow: var(--normal);
+    }
+}
