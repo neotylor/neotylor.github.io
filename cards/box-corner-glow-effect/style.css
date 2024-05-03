@@ -1,0 +1,46 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.box{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: #2d2d2d;
+    overflow: hidden;
+    cursor: pointer;
+    transform: rotate(calc(var(--i) * 90deg));
+}
+.box::before{
+    content: '';
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background: radial-gradient(var(--color), transparent,transparent);
+    animation: anime 1.5s linear infinite;
+}
+@keyframes anime{
+    0%{transform: translate(-150px, -150px);}
+    25%{transform: translate(0px, -150px);}
+    50%{transform: translate(0px, 0px);}
+    75%{transform: translate(-150px, 0px);}
+    100%{transform: translate(-150px, -150px);}
+}
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #2d2d2de0;
+}
