@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffe8e8;
+}
+:root{
+    --prime-color: #c0a464;
+    --bg-color:#121a27;
+}
+.card{
+    width: 300px;
+    height: 200px;
+    background: var(--bg-color);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.1);
+}
+
+.border{
+    position: absolute;
+    inset: 0px;
+    border: 2px solid var(--prime-color);
+    transform: rotate(10deg);
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+}
+.card:hover .border{
+    transform: rotate(0deg);
+    inset: 15px;
+    opacity: 1;
+}
+.b-text{
+    position: absolute;
+    color: var(--prime-color);
+    left: 50%;
+    bottom: 13px;
+    transform: translateX(-50%);
+    font-size: 6px;
+    background: var(--bg-color);
+    text-transform: uppercase;
+    padding: 0 8px;
+    letter-spacing: 7px;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+}
+.card:hover .b-text{
+    opacity: 1;
+    letter-spacing: 3px;
+}
+
+.logo{
+    position: relative;
+    transition: 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.logo .logo1{
+    color: var(--prime-color);
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+.logo .logo2{
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--prime-color);
+    display: inline-block;
+    text-wrap: nowrap;
+    
+    overflow: hidden;
+    width: 0%;
+    transition: 1s ease-in-out;
+}
+.logo .logo2::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.card:hover .logo .logo2{
+    width: 100%;
+    animation: slide 1s ease-in-out forwards;
+}
+.card:hover .logo .logo2::before{
+    width: 100%;
+    animation: anime 1s ease-in-out forwards;
+}
+
+.text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 25px;
+    transition: .5s ease-in-out 0.5s;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 7px;
+    opacity: 0;
+
+}
+.card:hover .text{
+opacity: 1;
+color: var(--prime-color);
+letter-spacing: 5px;
+}
+
+@keyframes slide{
+    0%{
+        border-right: 1px solid transparent;
+    }
+    10%{
+        border-right: 1px solid var(--prime-color);
+    }
+    80%{
+        border-right: 1px solid var(--prime-color);
+    }
+    100%{
+        border-right: 1px solid transparent;
+    }
+}
+
+@keyframes anime {
+    0%{
+        background: linear-gradient(90deg, #0000 90%, var(--prime-color) 100%);
+        opacity: 0;
+    }
+    30%{
+        background: linear-gradient(90deg, #0000 70%, var(--prime-color) 100%);
+        opacity: 1;
+    }
+    70%{
+        background: linear-gradient(90deg, #0000 70%, var(--prime-color) 100%);
+        opacity: 1;
+    }
+    100%{
+        background: linear-gradient(90deg, #0000 90%, var(--prime-color) 100%);
+        opacity: 0;
+    }
+}
