@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    background: #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-evenly;
+}
+
+.cercle {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background: #e0e0e0;
+
+    border-radius: 50%;
+    box-shadow:
+        inset 20px 20px 60px #bbb,
+        inset -20px -20px 60px #fff,
+        0px 0px 0px #bbb,
+        0px 0px 0px #fff;
+    animation: anime 3s infinite ease-in-out alternate;
+}
+
+.delay{
+    animation-delay: 1.5s;
+}
+
+@keyframes anime {
+    0% {
+        box-shadow:
+            inset 20px 20px 60px #bbb,
+            inset -20px -20px 60px #fff,
+            0px 0px 0px #bbb,
+            0px 0px 0px #fff;
+    }
+    50% {
+        box-shadow:
+            inset 0px 0px 0px #bbb,
+            inset 0px 0px 0px #fff,
+            0px 0px 0px #bbb,
+            0px 0px 0px #fff;
+    }
+    100% {
+        box-shadow:
+            inset 0px 0px 0px #bbb,
+            inset 0px 0px 0px #fff,
+            20px 20px 60px #bbb,
+            -20px -20px 60px #fff
+    }
+
+}
