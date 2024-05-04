@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(225, 253, 255);
+}
+
+h1{
+    font-size: 98px;
+    font-family: sans-serif;
+    font-weight: 800;
+    background: url(https://source.unsplash.com/1800x1200/?wallpaper) ;
+    background-position: center;
+    background-size: 100vw;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 3s;
+}
+h1:hover{
+    font-size: 250px;
+}
