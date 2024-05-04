@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    /* color: white; */
+}
+.container{
+    position: relative;
+}
+.container h2{
+    position: absolute;
+    font-size: 6rem;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.font{
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(0, 113, 194);
+}
+
+.back{
+    color: rgb(0, 113, 194);
+    animation: anime 4s ease-in-out infinite;
+}
+@keyframes anime {
+    0%, 100%{
+        clip-path: polygon(0% 54%, 11% 50%, 22% 49%, 30% 54%, 40% 60%, 53% 62%, 67% 60%, 76% 55%, 83% 49%, 93% 45%, 100% 45%, 100% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0 55%, 11% 61%, 22% 63%, 31% 60%, 42% 58%, 53% 54%, 65% 53%, 76% 54%, 85% 55%, 94% 59%, 100% 64%, 100% 100%, 0% 100%);
+
+    }
+}                
