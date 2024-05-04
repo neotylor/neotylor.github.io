@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container{
+    display: flex;
+}
+
+.card{
+    width: 250px;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px black;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.details{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.355);
+    color: white;
+    padding: 10px;
+    transform: translateY(calc(100% - 40px));
+    transition: 0.3s;
+}
+
+p{
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover .details{
+    transform: translateY(0);
+}
+.card:hover p{
+    opacity: 1;
+}
+.card:hover img{
+    scale: 1.05;
+}
