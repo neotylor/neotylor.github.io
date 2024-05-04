@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg: #465;
+   --ring-one: #7ed7c1;
+   --ring-two: #ffecd6;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+}
+
+.ring {
+    width: 200px;
+    height: 100px;
+    position: relative;
+    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.ring::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid var(--ring-one);
+    border-radius: 100px;
+    right: 0;
+    transition: 1.5s;
+}
+.ring::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border: 5px solid var(--ring-two);
+    border-radius: 100px;
+    left: 12px;
+    transition: 1.5s;
+}
+.checkbox:checked + .ring::before {
+    width: 75px;
+    height: 75px;
+    right: 12px;
+}
+.checkbox:checked + .ring::after {
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.checkbox {
+    display: none;
+}   
