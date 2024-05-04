@@ -1,0 +1,158 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+height: 100vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+/*background-color: #dddddd;*/
+background-color: #131415;
+}
+
+.container{
+min-height: 100px;
+max-width: 1900px;
+width: 100%;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+padding: 50px;
+}
+
+.box{
+min-height: 750px;
+width: calc(100%/3 - 70px);
+padding: 40px;
+box-shadow: 15px 15px 10px 5px rgb(0 0 0 / 51%),
+-10px -10px 10px 5px rgb(108 108 108 / 20%),
+inset 15px 15px 10px 5px rgb(0 0 0 / 51%),
+inset -10px -10px 10px 5px rgb(108 108 108 / 20%);
+border: 2px solid #232427;
+color: white;
+cursor: pointer;
+overflow: hidden;
+}
+
+.icon::before{
+font-size: 170px;
+}
+
+.icon{
+width: 100%;
+text-align: center;
+margin-top: 30%;
+}
+
+.logo-description{
+text-align: center;
+margin-top: 5%;
+}
+
+.logo-version{
+display: block;
+font-size: 20px;
+padding-bottom: 40px;
+}
+
+.logo-tittle{
+position: relative;
+padding-bottom: 20px;
+font-weight: bold;
+font-size: 65px;
+}
+
+.logo-tittle::after, .logo-tittle::before{
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 3px;
+background-color: white;
+}
+
+.windows:hover .icon{
+text-shadow: 0 0 50px #006eff,
+            0 0 100px #006eff,
+            0 0 150px #006eff,
+            0 0 200px #006eff,
+            0 0 250px #006eff,
+            0 0 300px #006eff;			   
+}
+
+
+.windows:hover .logo-tittle::after{
+animation: moveSize 2s infinite linear;
+background-color: #00b6ff;
+}
+
+.apple:hover .icon{
+text-shadow: 0 0 50px #00c8ff,
+            0 0 100px #00c8ff,
+            0 0 150px #00c8ff,
+            0 0 200px #00c8ff,
+            0 0 250px #00c8ff,
+            0 0 300px #00c8ff;
+}
+
+.apple:hover .logo-tittle::after{
+animation: moveSize 2s infinite linear;
+background-color: #00e5ff;
+}
+
+.ubuntu:hover .icon{
+text-shadow: 0 0 50px #eb00ff,
+            0 0 100px #eb00ff,
+            0 0 150px #eb00ff,
+            0 0 200px #eb00ff,
+            0 0 250px #eb00ff,
+            0 0 300px #eb00ff;
+}
+
+.ubuntu:hover .logo-tittle::after{
+animation: moveSize 2s infinite linear;
+background-color: #eb00ff;
+}
+
+@keyframes moveSize{
+0%{
+    transform: scaleX(0);
+    transform-origin: left;
+}
+50%{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+50.1%{
+    transform: scaleX(1);
+    transform-origin: right;
+}
+100%{
+    transform: scaleX(0);
+    transform-origin: right;
+}
+}
+
+
+@media (max-width: 1200px){
+.container{
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow-y: scroll;
+}
+.box{
+    width: 65%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-align: center;
+    align-items: center;
+}
+}
