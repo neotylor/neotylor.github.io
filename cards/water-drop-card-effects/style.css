@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  body {
+    min-height: 100vh;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  :root {
+    --color: hsl(171, 82%, 45%)
+  }
+  
+  .water {
+    position: relative;
+    width: 350px;
+    aspect-ratio: 1;
+    box-shadow: inset 20px 20px 20px #0001,
+    inset -20px -20px 25px #ffffffe5,
+    25px 25px 25px #0000000a,
+    25px 25px 30px #0000000a;
+  
+    border-radius:59% 41% 56% 44% / 58% 52% 48% 42% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+  .water:hover {
+    border-radius: 50%;
+  }
+  .water::before {
+    content: "";
+    position: absolute;
+    width: 85px;
+    height: 20px;
+    background: white;
+    left: 70px;
+    top: 50px;
+    border-radius: 50%;
+    rotate: -30deg;
+    transition: 0.5s;
+  }
+  .water::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 10px;
+    background: white;
+    left: 115px;
+    top: 70px;
+    border-radius: 50%;
+    rotate: -30deg;
+    transition: 0.5s;
+  }
+  .water:hover::before {
+    left: 65px;
+    top: 45px;
+  }
+  .water:hover::after {
+    left: 110px;
+    top: 65px;
+  }
+  .water i {
+    font-size: 4rem;
+    color: var(--color);
+  }
+  .water h1 {
+    color: var(--color);
+    margin: 20px 0;
+  }
+  .water a {
+    background: var(--color);
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    padding: 12px 20px;
+    font-weight: bold;
+    position: relative;
+    transition: 0.5s;
+    opacity: 0.7;
+  }
+  .water a:hover {
+    opacity: 1;
+  }
+  .water a::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 66%;
+    background: white;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
