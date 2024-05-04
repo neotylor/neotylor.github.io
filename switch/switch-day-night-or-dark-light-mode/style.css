@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #203352;
+    font-family: sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper input{
+    display: none;
+}
+
+.toggle{
+    display: inline-block;
+    position: relative;
+    width: 90px;
+    height: 50px;
+    background: #6ec5ee;
+    cursor: pointer;
+    border-radius: 100px;
+    display:flex;
+    align-items: center;
+}
+
+.toggle::before{
+    content: "AM";
+    position: absolute;
+    left: -50px;
+    font-size: 18px;
+}
+.toggle::after{
+    content: "PM";
+    position: absolute;
+    right: -50px;
+    font-size: 18px;
+    color: #6389be;
+}
+
+.toggle_handel{
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    left: 3px;
+    width: 44px;
+    height: 44px;
+    background: #ffcf96;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #0000004d;
+    transform: rotate(-45deg);
+
+    transition:  all  0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toggle_handel .crater{
+    position: absolute;
+    background: #e8cda5;
+    opacity: 0;
+    border-radius: 100%;
+
+    transition:  opacity ease-in-out;
+}
+
+.crater-1{
+    top: 18px;
+    left: 10px;
+    width: 4px;
+    height: 4px;
+}
+.crater-2{
+    top: 28px;
+    left: 22px;
+    width: 6px;
+    height: 6px;
+}
+.crater-3{
+    top: 10px;
+    left: 25px;
+    width: 8px;
+    height: 8px;
+}
+
+.star{
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+
+    transition:  all  0.2s cubic-bezier(0.4456, 0.05, 0.55, 0.95);
+}
+
+.star-1{
+    top: 10px;
+    left: 35px;
+    z-index: 0;
+    width: 30px;
+    height: 3px;
+}
+.star-2{
+    top: 18px;
+    left: 28px;
+    z-index: 1;
+    width: 30px;
+    height: 3px;
+}
+.star-3{
+    top: 27px;
+    left: 40px;
+    z-index: 0;
+    width: 30px;
+    height: 3px;
+}
+
+.star-4,
+.star-5,
+.star-6
+{
+opacity: 0;
+
+}
+
+.star-4{
+    top: 16px;
+    left: 11px;
+    z-index: 0;
+    width: 2px;
+    height: 2px;
+    transform: translate3d(3px, 0, 0);
+}
+.star-5{
+    top: 32px;
+    left: 17px;
+    z-index: 0;
+    width: 2px;
+    height: 2px;
+    transform: translate3d(3px, 0, 0);
+}
+.star-6{
+    top: 36px;
+    left: 28px;
+    z-index: 0;
+    width: 2px;
+    height: 2px;
+    transform: translate3d(3px, 0, 0);
+}
+
+
+
+input:checked + .toggle{
+    background: #749dd6;
+}
+input:checked + .toggle::before{
+    color: #749ed7;
+}
+input:checked + .toggle::after{
+    color: #fff;
+}
+input:checked + .toggle .toggle_handel{
+    background: #ffe5b5;
+    transform: translate3d(40px , 0, 0) rotate(0);
+}
+input:checked + .toggle .toggle_handel .crater {
+opacity: 1;
+}
+
+input:checked + .toggle .star-1{
+    width: 2px;
+    height: 2px;
+}
+input:checked + .toggle .star-2{
+    width: 4px;
+    height: 4px;
+    transform: translate3d(-5px, 0 , 0);
+}
+input:checked + .toggle .star-3{
+    width: 2px;
+    height: 2px;
+  
+}
+
+input:checked + .toggle .star-4,
+input:checked + .toggle .star-5,
+input:checked + .toggle .star-6{
+    opacity: 1;
+    transform: translate3d(0, 0 , 0);
+
+    
+}
+input:checked + .toggle .star-4{
+    transition:  all  0.2s cubic-bezier(0.4456, 0.05, 0.55, 0.95);
+}
+input:checked + .toggle .star-5{
+    transition:  all  0.3s cubic-bezier(0.4456, 0.05, 0.55, 0.95);
+}
+input:checked + .toggle .star-6{
+    transition:  all  0.4s cubic-bezier(0.4456, 0.05, 0.55, 0.95);
+}
+  
