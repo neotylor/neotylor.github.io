@@ -1,0 +1,111 @@
+body {
+    font-family: sans-serif;
+    background: linear-gradient(50deg, #17572d, #233e5d);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    position: absolute;
+    top: 120px;
+    font-size: 80px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: transparent;
+    perspective: 1100px;
+    padding: 0;
+    border: 0;
+}
+.card:hover .front{
+    transform: rotateY(-180deg);
+}
+
+.front {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: 2s;
+    background: center no-repeat;
+    background-size: cover;
+    transform: rotateY(0deg);
+    z-index: 1;
+}
+
+.item-a {
+    background-image: url(assets/images/watch.jpg);
+}
+.item-b {
+    background-image: url(assets/images/headphone.jpeg);
+}
+.item-c {
+    background-image: url(assets/images/begs.jpg);
+}
+
+.front::before {
+    content: "";
+    position: absolute;
+    transform-style: preserve-3d;
+    border: 3px double white;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+    transform: translateZ(20px);
+}
+
+.front h1 {
+    position: absolute;
+    font-size: 2rem;
+    text-shadow: 0 0 10px black;
+    bottom: 10px;
+    left: 20px;
+    transform-style: preserve-3d;
+    transform: translateZ(20px);
+}
+
+.card-back {
+    background: #233e5db7;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   backface-visibility: hidden;
+}
+.card-back a{
+    background: #17572d;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transform-style: preserve-3d;
+    transform: translateZ(40px);
+    transition: 0.2s;
+}
+.card-back a:hover{
+    background:  white;
+    color:#17572d;
+}
