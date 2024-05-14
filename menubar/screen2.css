@@ -1,0 +1,98 @@
+.screen2_container{
+    width: 350px;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+    color: rgb(54, 53, 53);
+    border: 15px solid rgb(54, 53, 53);
+    border-top: 30px solid rgb(54, 53, 53);
+    border-bottom: 30px solid rgb(54, 53, 53);
+    border-radius: 60px;
+}
+.screen2_menu_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: #533557;
+    color: white;
+}
+.screen2_menu_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    transition: all .5s ease-in-out;
+}
+.screen2_menu_hamburger{
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 10;
+    transition: all .5s ease;
+}
+.screen2_menu_hamburger::before,
+.screen2_menu_hamburger::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: white;
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+.screen2_menu_hamburger::before{
+    transform: translateY(-6px);
+}
+.screen2_menu_hamburger::after{
+    transform: translateY(6px);
+}
+
+.screen2_input:checked ~.screen2_menu_hamburger::before{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.screen2_input:checked ~.screen2_menu_hamburger::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+.screen2_input:checked ~.screen2_menu_hamburger{
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.screen2_menu_items{
+    position: absolute;
+    top: -100%;
+    background:  #533557;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    transition: all .5s ease-out; 
+    padding-top: 50px;
+}
+.screen2_menu_items li{
+    border-bottom: .5px solid rgb(182, 181, 181);
+    padding: 24px 0;
+    text-align: center;
+    transition: all .2s ease-out; 
+    cursor: pointer;
+}
+.screen2_menu_items li:hover{
+    letter-spacing: 2px;
+    opacity: .6;
+}
+
+.screen2_input:checked ~.screen2_menu_items{
+    top:0;
+}
+.screen2_input{
+    display: none;
+}
+
+@media screen and (max-width: 600px){
+    .screen2_container{
+        width: 300px;
+        height: 600px;
+    }
+}
