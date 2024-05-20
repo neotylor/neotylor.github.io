@@ -1,0 +1,150 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: verdana, arial, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+.notes_area {
+  position: relative;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.note_card {
+  background-color: #333;
+  min-width: 170px;
+  min-height: 120px;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.note_card.active {
+  border: 1px solid #0078d4;
+  resize: both;
+}
+
+.default_note {
+  width: 305px;
+  height: 300px;
+  /* margin-left: 50px;
+  margin-top: 50px; */
+}
+.note_card .header {
+  background-color: #e6b905;
+  width: 100%;
+  min-height: 8px;
+  transition:linear 2s;
+  cursor: move;
+  cursor: -moz-grab;
+}
+
+.note_card.active .header {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.note_card .header .icon {
+  display: none;
+  cursor: pointer;
+}
+.note_card.active .header .icon {
+  width: 30px;
+  height: 30px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note_card.active .header .add-more-icon:hover {
+  background-color: #33333333;
+}
+
+.note_card.active .header .right_side {
+  display: flex;
+}
+
+.note_card.active .header .close-icon {
+  transform: rotate(45deg);
+}
+
+.note_card .note-body {
+  width: 100%;
+  height: calc(100% - 60px);
+  border: none;
+  color: #adadad;
+  padding: 12px;
+  font-size: 12px;
+}
+[contenteditable]:focus-visible, *:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+[contenteditable][placeholder]:empty:before {
+  content: attr(placeholder);
+  position: absolute;
+  color: gray;
+  background-color: transparent;
+}
+.note_card.active .note-body {
+  /* background-color: #0078d4; */
+}
+
+.note_card .note-footer {
+  width: 100%;
+  height: 30px;
+  border-top: 1px solid #444;
+}
+
+
+.notes_list_area {
+  /* background: gray; */
+  width: 320px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  height: 500px;
+}
+
+.notes_list_area .header {
+  background-color: transparent; 
+}
+.notes_list_area .note-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.icon-rtl {
+  padding: 8px 30px 8px 8px;
+  background: url('/search.svg') no-repeat right;
+  background-size: 20px;
+  width: 100%;
+  border: none;
+  background-color: gray;
+  background-position: calc(100% - 6px) 6px;
+}
+
+.notes_list_area .note-body h2, .notes_list_area .note-body h2 {
+  color: white;
+}
+.notes_area .notes_list_area .header .icon {
+  color: #d0caca;
+}
+::placeholder  {
+  color: #d0caca;
+  opacity: 1; /* Firefox */
+}
+  
+::-ms-input-placeholder { /* Edge 12 -18 */
+  color: #d0caca;
+}
