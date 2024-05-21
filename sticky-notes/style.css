@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: verdana, arial, sans-serif;
+  font-family: "Roboto", "Arial", verdana, arial, sans-serif;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
   min-height: 120px;
   display: inline-block;
   border-radius: 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: absolute;
 }
 
@@ -37,21 +37,22 @@ body {
   /* margin-left: 50px;
   margin-top: 50px; */
 }
-.note_card .header {
+.note_card .header, .note_card .note_card .header {
   background-color: #e6b905;
   width: 100%;
   min-height: 8px;
   transition:linear 2s;
   cursor: move;
   cursor: -moz-grab;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .note_card.active .header {
-  height: 30px;
+  height: fit-content;
   display: flex;
   justify-content: space-between;
 }
-.note_card .header .icon {
+.note_card .header .icon, .note_card.active .note_card .header .icon {
   display: none;
   cursor: pointer;
 }
@@ -126,7 +127,7 @@ body {
 
 .icon-rtl {
   padding: 8px 30px 8px 8px;
-  background: url('/search.svg') no-repeat right;
+  background: url('./search.svg') no-repeat right;
   background-size: 20px;
   width: 100%;
   border: none;
@@ -147,4 +148,103 @@ body {
   
 ::-ms-input-placeholder { /* Edge 12 -18 */
   color: #d0caca;
+}
+
+.notes__list {
+  width: 100%;
+}
+.notes__list .note_card {
+  width: 100%;
+  position: relative;
+  border: 1px solid #444;
+  min-height: 45px;
+  padding-bottom: 8px;
+}
+.notes__list .note_card.open {
+  border: 1px solid #0078d4;
+}
+  
+.notes__list .note_card .editor {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  padding: 12px 12px 0;
+  height: fit-content;
+}
+
+.notes__list .note_card:hover {
+  background-color: #c4bfbf3d;
+}
+
+.notes__list .note_card:hover .menu > li > a {
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  text-wrap: nowrap;
+}
+.menu-wrapper {
+  position: absolute;
+  right: 0;
+}
+
+.menu {
+  display: block;
+  /* margin: 0 auto; */
+  position: relative;
+  /* width: 200px; */
+}
+
+.menu > li > a {
+  /* background-color: #0078d4; */
+  color: #adadad;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 12px;
+}
+.menu > li > a svg {
+  width: 24px;
+  height: 24px;
+}
+
+.menu ul {
+  background: #ddd;
+  height: 0;
+  right: 0;
+  opacity: 0;
+  position: absolute;
+  transition: all .5s ease;
+  top: 20px;
+  width: fit-content;
+}
+
+.menu li:hover ul {
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+}
+
+.menu ul a {
+  color: #000;
+  display: block;
+  padding: 5px 20px;
+}
+.menu ul li a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.menu ul li a:hover {
+  background-color: #ccc;
+}
+.menu ul li a svg {
+  width: 16px;
+  height: 16px;
 }
