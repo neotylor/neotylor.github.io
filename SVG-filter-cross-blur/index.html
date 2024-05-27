@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Filter — Cross Blur</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg style="position: fixed;" xmlns='http://www.w3.org/2000/svg'>
+    <filter id="filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="0 20" in="SourceGraphic" edgeMode="none" result="blur" />
+      <feGaussianBlur stdDeviation="16 0" in="SourceGraphic" edgeMode="none" result="blur2" />
+   
+      <feBlend mode="lighten" in="blur" in2="blur1" result="blend" />
+    
+      <feMerge result="merge">
+        <feMergeNode in="blend" />
+        <feMergeNode in="blend" />
+      </feMerge>
+    </filter>
+  </svg>
+  <div id="movableDiv" class="filter"></div>
+  <h1>Cross Blur</h1> 
+</body>
+</html>

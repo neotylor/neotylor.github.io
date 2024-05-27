@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap");
+.filter {
+  position: fixed;
+  width: min(60vw, 60vh);
+  aspect-ratio: 1;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+  pointer-events: none;
+  touch-action: none;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-backdrop-filter: url(#filter) brightness(1.1);
+          backdrop-filter: url(#filter) brightness(1.1);
+  box-shadow: var(--shadow-elevation-medium);
+  -webkit-animation: 10s linear rotate infinite;
+          animation: 10s linear rotate infinite;
+  opacity: 1;
+  z-index: 1;
+  overflow: hidden;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+h1 {
+  margin: 0;
+  --fsize: clamp(2rem, 16vw, 16rem);
+  font-size: var(--fsize);
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+}
+
+html {
+  --surface: hsl(200 10% 10%);
+  --text: hsl(200 5% 80%);
+  --hero-h: calc(100vh - 40px);
+  background-color: var(--surface);
+  color: var(--text);
+  block-size: 100%;
+}
+
+body {
+  --background-color: #316760;
+  touch-action: none;
+  font-family: "Space Grotesk", sans-serif;
+  background: url(./assets/images/tiSSP0h.jpeg) no-repeat center/cover;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  overflow-y: auto;
+  display: grid;
+  place-content: center;
+}
+
+:root {
+  --shadow-color: 0deg 0% 9%;
+  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+  	0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+  	1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+  	0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+  	2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+  	5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+  	1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+  	2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+  	4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+  	7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+  	11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+  	17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+  	25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
