@@ -1,0 +1,79 @@
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+    background-color: #F9F9F9;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 256px;
+    aspect-ratio: 1/1;
+  }
+  
+  @-webkit-keyframes check-svg-path-anim {
+    0% {
+      stroke-dasharray: 0 400;
+      stroke-width: 50;
+    }
+    to {
+      stroke-dasharray: 400 0;
+      stroke-width: 20;
+    }
+  }
+  
+  @keyframes check-svg-path-anim {
+    0% {
+      stroke-dasharray: 0 400;
+      stroke-width: 50;
+    }
+    to {
+      stroke-dasharray: 400 0;
+      stroke-width: 20;
+    }
+  }
+  @-webkit-keyframes check-svg-circle-anim {
+    0% {
+      stroke-dasharray: 0 2023;
+      stroke-width: 50;
+    }
+    to {
+      stroke-dasharray: 2023 0;
+      stroke-width: 20;
+    }
+  }
+  @keyframes check-svg-circle-anim {
+    0% {
+      stroke-dasharray: 0 2023;
+      stroke-width: 50;
+    }
+    to {
+      stroke-dasharray: 2023 0;
+      stroke-width: 20;
+    }
+  }
+  .check-svg-commonds {
+    fill: none;
+    stroke: #198754;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 20;
+    transform-origin: 50% 50%;
+  }
+  
+  .check-svg-circle {
+    stroke-dasharray: 2023;
+    stroke-dashoffset: 2023;
+    transform: rotate(-90deg);
+    -webkit-animation: 1s ease-in-out 0.5s 1 normal forwards running check-svg-circle-anim;
+            animation: 1s ease-in-out 0.5s 1 normal forwards running check-svg-circle-anim;
+  }
+  
+  .check-svg-path {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    -webkit-animation: 0.5s ease-in-out 1s 1 normal forwards running check-svg-path-anim;
+            animation: 0.5s ease-in-out 1s 1 normal forwards running check-svg-path-anim;
+  }
