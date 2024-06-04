@@ -155,10 +155,10 @@ html {
     background-image: url(assets/images/motociclista-1.jpg?raw=true);
   }
   #card-2 .card-image {
-    background-image: url(assets/images/motociclista-1.jpg?raw=true);
+    background-image: url(assets/images/motociclista-2.jpg?raw=true);
   }
   #card-3 .card-image {
-    background-image: url(assets/images/motociclista-1.jpg?raw=true);
+    background-image: url(assets/images/motociclista-3.jpg?raw=true);
   }
   .card:hover .card-image {
     opacity: 1;
