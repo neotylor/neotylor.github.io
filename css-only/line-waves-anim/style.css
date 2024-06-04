@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+  }
+  .hold {
+    width: 400px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+  .line {
+    height: 65px;
+    width: 6px;
+    background-color: #fff;
+    background: linear-gradient(#ff3b94, #af3dff);
+    border-radius: 5px;
+    transition: all 1s;
+    animation: move 0.75s linear infinite alternate;
+  }
+  .line1, .line7, .line13, .line19, .line25, .line31, .line37, .line43, .line49 {
+    left: 8px;
+    animation-delay: 0.25s;
+  }
+
+  .line2, .line8, .line14, .line20, .line26, .line32, .line38, .line44, .line50 {
+    left: 16px;
+    animation-delay: 0.5s;
+  }
+  .line3, .line9, .line15, .line21, .line27, .line33, .line39, .line45 {
+    left: 24px;
+    animation-delay: 0.75s;
+  }
+
+  .line4, .line10, .line16, .line22, .line28, .line34, .line40, .line46 {
+    left: 32px;
+    animation-delay: 1s;
+  }
+
+  .line5, .line11, .line17, .line23, .line29, .line35, .line41, .line47 {
+    left: 40px;
+    animation-delay: 1.25s;
+  }
+
+  .line6, .line12, .line18, .line24, .line30, .line36, .line42, .line48 {
+    left: 48px;
+    animation-delay: 1.5s;
+  } 
+
+  @-moz-keyframes move {
+    0% {
+      top: 0;
+      height: 65px;
+    }
+    100% {
+      top: 15px;
+      height: 25px;
+    }
+  }
+  @-webkit-keyframes move {
+    0% {
+      top: 0;
+      height: 65px;
+    }
+    100% {
+      top: 15px;
+      height: 25px;
+    }
+  }
+  @-o-keyframes move {
+    0% {
+      top: 0;
+      height: 65px;
+    }
+    100% {
+      top: 15px;
+      height: 25px;
+    }
+  }
+  @keyframes move {
+    0% {
+      top: 0;
+      height: 65px;
+    }
+    100% {
+      top: 15px;
+      height: 25px;
+    }
+  }
