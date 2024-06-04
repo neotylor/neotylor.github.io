@@ -16,7 +16,7 @@ nav {
   
   ul {
     position: relative;
-    aperspective: 1000px;
+    perspective: 1000px;
     list-style: none;
     padding-left: 0;
     box-sizing: border-box;
@@ -32,8 +32,8 @@ nav {
       height: 3rem;
       display: flex;
       background: linear-gradient(#00000005, #0000), #fff;
-      aborder-bottom: 1px solid #0001;
-      abackground-clip: padding-box;
+      border-bottom: 1px solid #0001;
+      background-clip: padding-box;
       box-shadow: inset 0 0 1rem -0.5rem #0002;
       transition: transform 0.35s, box-shadow 0.35s, background 0.35s;
       transform: translate3d(0,0,0);
@@ -115,7 +115,7 @@ nav {
   
   /* demo */
   body {
-    aperspective: 1000px;
+    perspective: 1000px;
     position: relative;
     margin: 0;
     min-height: 100vh;
@@ -125,6 +125,3 @@ nav {
     transition: background 1s;
     background: #fff;
   }
-  
-  
-  Resources
