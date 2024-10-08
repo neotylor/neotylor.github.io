@@ -75,6 +75,7 @@
 }
 .banner .content h2{
     font-size: 3em;
+    line-height: 1em;
 }
 .banner .content .model{
     background-image: url(images/model.png);
