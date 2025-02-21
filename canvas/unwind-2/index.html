@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="x-shader/x-fragment">#version 300 es
+          
+        precision highp float;
+        out vec4 O;
+        uniform float time;
+        uniform vec2 resolution;
+        #define FC gl_FragCoord.xy
+        #define R resolution
+        #define T time
+        #define S smoothstep
+        void main() {
+            vec2 uv=(2.*FC-R)/min(R.x,R.y),p=uv;
+            
+            float
+            a=atan(uv.y,uv.x)/6.28318,
+            b=.125/length(uv);
+            uv=vec2(a*9.+b,a-b-T*.6);
+            uv=fract(uv*2.)-.5;
+            
+            float t=T*.1;
+            uv=2.*(uv-.15*(vec2(sin(t+uv.x),cos(t-uv.y))));
+            
+            for (float i=.0; i++<5.;) {
+                uv.x+=.3*sin(t*2.+i*uv.y*1.5)-t;
+                uv.y+=.3*sin(t*2.-i*uv.x*1.5)+t;
+            }
+            
+            float d=sin(t+uv.x+uv.y)*S(.05,.2,length(p));
+            d/=1.+exp(-d);
+            
+            O=vec4(vec3(d),1);
+        }</script>
+    <script src="script.js"></script>
+</body>
+
+</html>
